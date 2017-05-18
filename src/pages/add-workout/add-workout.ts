@@ -30,15 +30,17 @@ export class AddWorkoutPage {
       title: this.title,
       note : this.note,
       type: this.type
-    }
+    };
+    
 
     //add workout
     this.workoutService.addWorkout(workout)
       .subscribe(res => {
         this.result = res;
       });
-
-    this.navCtrl.push(WorkoutsPage);
+    //this line will return to given page  
+    // this.navCtrl.popToRoot();
+    this.navCtrl.parent.select(WorkoutsPage);
   }
 
   

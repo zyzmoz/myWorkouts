@@ -34,9 +34,9 @@ export class WorkoutDetailsPage {
   deleteWorkout(id){
     this.workoutService.deleteWorkout(id)
       .subscribe(res => {
+        
       });
-
-    this.navCtrl.push(WorkoutsPage);
+    this.navCtrl.popToRoot();    
   }
 
  
