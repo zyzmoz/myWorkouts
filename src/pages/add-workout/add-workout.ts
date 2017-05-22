@@ -20,9 +20,14 @@ export class AddWorkoutPage {
   public type: string;
   public result : any;
 
-  constructor(public navCtrl: NavController, private workoutService : WorkoutService) {
-    
+  constructor(public navCtrl: NavController, private workoutService : WorkoutService) {    
 
+  }
+
+  ionViewDidEnter(){
+    this.title = '';
+    this.note  = '';
+    this.type  = '';
   }
 
   onSubmit(){
@@ -36,11 +41,10 @@ export class AddWorkoutPage {
     //add workout
     this.workoutService.addWorkout(workout)
       .subscribe(res => {
-        this.result = res;
+        this.result = res; 
       });
     //this line will return to given page  
-    this.navCtrl.parent.select(0);
-    this.navCtrl.setRoot(WorkoutsPage);
+    this.navCtrl.parent.select(0);    
   }
 
   
