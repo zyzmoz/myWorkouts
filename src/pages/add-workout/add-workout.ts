@@ -39,8 +39,8 @@ export class AddWorkoutPage {
         this.result = res;
       });
     //this line will return to given page  
-    // this.navCtrl.popToRoot();
-    this.navCtrl.parent.select(WorkoutsPage);
+    this.navCtrl.parent.select(0);
+    this.navCtrl.setRoot(WorkoutsPage);
   }
 
   
